@@ -1,0 +1,126 @@
+<sunSpecModels v="1">
+  <model id="64303" len="78" name="BoardInformation">
+    <block len="6" type="fixed">
+      <point id="VerMajor" offset="0" access="r" type="uint16" len="1" mandatory="true" />
+      <point id="VerMinor" offset="1" access="r" type="uint16" len="1" mandatory="true" />
+      <point id="Reserved_1_SF" offset="2" access="r" type="sunssf" len="1" mandatory="true" />
+      <point id="Reserved_2_SF" offset="3" access="r" type="sunssf" len="1" mandatory="true" />
+      <point id="Reserved_3_SF" offset="4" access="r" type="sunssf" len="1" />
+      <point id="Reserved_4_SF" offset="5" access="r" type="sunssf" len="1" />
+    </block>
+    <block len="72" type="repeating">
+      <point id="DevID" offset="0" access="r" type="string" len="8" mandatory="true" />
+      <point id="BoardLabel" offset="8" access="r" type="string" len="32" mandatory="true" />
+      <point id="Reserved_1" offset="40" access="r" type="acc32" len="2" mandatory="true" />
+      <point id="Reserved_2" offset="42" access="r" type="acc32" len="2" mandatory="true" />
+      <point id="AppVerMajor" offset="44" access="r" type="uint16" len="1" mandatory="true" />
+      <point id="AppVerMinor" offset="45" access="r" type="uint16" len="1" mandatory="true" />
+      <point id="AppChecksum" offset="46" access="r" type="string" len="10" mandatory="true" />
+      <point id="BLVerMajor" offset="56" access="r" type="uint16" len="1" />
+      <point id="BLVerMinor" offset="57" access="r" type="uint16" len="1" />
+      <point id="BLChecksum" offset="58" access="r" type="string" len="10" />
+      <point id="Reserved_3" offset="68" access="r" type="uint32" len="2" sf="Reserved_3_SF" />
+      <point id="Reserved_4" offset="70" access="r" type="uint32" len="2" sf="Reserved_4_SF" />
+    </block>
+  </model>
+  <strings id="64303" locale="en">
+    <model>
+      <label>BoardInformation</label>
+      <description />
+    </model>
+    <point id="VerMajor">
+      <label>Major Version of Model</label>
+      <description>Version Information of Model - Major</description>
+      <notes />
+    </point>
+    <point id="VerMinor">
+      <label>Minor Version of Model</label>
+      <description>Version Information of Model - Minor</description>
+      <notes />
+    </point>
+    <point id="Reserved_1_SF">
+      <label>Reserved_1 Scale Factor</label>
+      <description>reserved for future use (scale factor)</description>
+      <notes />
+    </point>
+    <point id="Reserved_2_SF">
+      <label>Reserved_2 Scale Factor</label>
+      <description>reserved for future use (scale factor)</description>
+      <notes />
+    </point>
+    <point id="Reserved_3_SF">
+      <label>Reserved_3 Scale Factor</label>
+      <description>reserved for future use (scale factor)</description>
+      <notes />
+    </point>
+    <point id="Reserved_4_SF">
+      <label>Reserved_4 Scale Factor</label>
+      <description>reserved for future use (scale factor)</description>
+      <notes />
+    </point>
+    <point id="DevID">
+      <label>Device ID</label>
+      <description>e.g. "HMI", "DSP_AC_CONTROL", "DSP_AC_POWER", "DSP_AC_RELAY", &#8230;</description>
+      <notes />
+    </point>
+    <point id="BoardLabel">
+      <label>Board Label String</label>
+      <description>e.g. "263H.010k.09/0009892/2815/03002159/0000000"</description>
+      <notes />
+    </point>
+    <point id="Reserved_1">
+      <label>Reserved_1</label>
+      <description />
+      <notes>Name: Reserved_1</notes>
+    </point>
+    <point id="Reserved_2">
+      <label>Reserved_2</label>
+      <description />
+      <notes>Name: Reserved_2</notes>
+    </point>
+    <point id="AppVerMajor">
+      <label>Major App Version</label>
+      <description>Major SW Version of Application</description>
+      <notes>Complete SW Version Information:
+V[AppVerMajor].[AppVerMinor], e.g.: V4.66</notes>
+    </point>
+    <point id="AppVerMinor">
+      <label>Minor App Version</label>
+      <description>Minor SW Version of Application</description>
+      <notes>Complete SW Version Information:
+V[AppVerMajor].[AppVerMinor], e.g.: V4.66</notes>
+    </point>
+    <point id="AppChecksum">
+      <label>SW Checksum App</label>
+      <description>Checksum of Application</description>
+      <notes>internal version / build ID / checksum</notes>
+    </point>
+    <point id="BLVerMajor">
+      <label>Major BL Version</label>
+      <description>Major SW Version of Bootloader</description>
+      <notes>Complete BL Version Information:
+V[BLVerMajor].[BLVerMinor], e.g.: V6.02</notes>
+    </point>
+    <point id="BLVerMinor">
+      <label>Minor BL Version</label>
+      <description>Minor SW Version of Bootloader</description>
+      <notes>Complete BL Version Information:
+V[BLVerMajor].[BLVerMinor], e.g.: V6.02</notes>
+    </point>
+    <point id="BLChecksum">
+      <label>BL Checksum</label>
+      <description>Checksum of Bootloader</description>
+      <notes>internal version / build ID / checksum</notes>
+    </point>
+    <point id="Reserved_3">
+      <label>Reserved_3</label>
+      <description>Reserved for future use</description>
+      <notes />
+    </point>
+    <point id="Reserved_4">
+      <label>Reserved_4</label>
+      <description>Reserved for future use</description>
+      <notes />
+    </point>
+  </strings>
+</sunSpecModels>

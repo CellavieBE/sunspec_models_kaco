@@ -1,0 +1,73 @@
+<sunSpecModels v="1">
+  <model id="64204" len="8" name="Q(U)extended">
+    <block len="8" type="fixed">
+      <point id="VerMajor" offset="0" access="r" type="uint16" len="1" mandatory="true" />
+      <point id="VerMinor" offset="1" access="r" type="uint16" len="1" mandatory="true" />
+      <point id="VOffPct" offset="2" access="rw" type="int16" len="1" mandatory="true" sf="VOffPct_SF" units="%VRef" />
+      <point id="VArOffPct" offset="3" access="rw" type="int16" len="1" mandatory="true" sf="VArOffPct_SF" units="%refVal" />
+      <point id="RvrtTms" offset="4" access="rw" type="uint16" len="1" mandatory="true" units="Secs" />
+      <point id="OffsetEna" offset="5" access="rw" type="enum16" len="1" mandatory="true">
+        <symbol id="DISABLED">0</symbol>
+        <symbol id="ENABLED">1</symbol>
+      </point>
+      <point id="VOffPct_SF" offset="6" access="r" type="sunssf" len="1" mandatory="true" />
+      <point id="VArOffPct_SF" offset="7" access="r" type="sunssf" len="1" mandatory="true" />
+    </block>
+  </model>
+  <strings id="64204" locale="en">
+    <model>
+      <label>Q(U)extended</label>
+      <description />
+    </model>
+    <point id="VerMajor">
+      <label>Version Information of Model</label>
+      <description>Major Version number</description>
+      <notes />
+    </point>
+    <point id="VerMinor">
+      <label />
+      <description>Minor Version number</description>
+      <notes />
+    </point>
+    <point id="VOffPct">
+      <label />
+      <description>Q(U) grid voltage offset</description>
+      <notes />
+    </point>
+    <point id="VArOffPct">
+      <label />
+      <description>Q(U) reactive power offset (The depending reference is configured in model 126. %refVal is %Wmax, %VArMax or %VArAval depending on value of DeptRef in model 126)</description>
+      <notes />
+    </point>
+    <point id="RvrtTms">
+      <label>RvrtTms</label>
+      <description>Timeout period for volt-VAR curve selection</description>
+      <notes />
+    </point>
+    <point id="OffsetEna">
+      <label>OffsetEna</label>
+      <description>Q(U) dynamic Q/U offset enable</description>
+      <notes />
+      <symbol id="DISABLED">
+        <label />
+        <description />
+        <notes />
+      </symbol>
+      <symbol id="ENABLED">
+        <label />
+        <description />
+        <notes />
+      </symbol>
+    </point>
+    <point id="VOffPct_SF">
+      <label>VOffPct_SF</label>
+      <description>Scale factor for offset voltage</description>
+      <notes />
+    </point>
+    <point id="VArOffPct_SF">
+      <label>VArOffPct_SF</label>
+      <description>Scale factor for reactive power offset</description>
+      <notes />
+    </point>
+  </strings>
+</sunSpecModels>

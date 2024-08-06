@@ -1,0 +1,481 @@
+<sunSpecModels v="1">
+  <model id="64201" len="35" name="Bidirectionalinvertercontrol">
+    <block len="35" type="fixed">
+      <point id="Version" offset="0" access="r" type="uint16" len="1" mandatory="true" />
+      <point id="VerMinor" offset="1" access="r" type="uint16" len="1" mandatory="true" />
+      <point id="RequestedState" offset="2" access="rw" type="enum16" len="1" mandatory="true">
+        <symbol id="OFF">1</symbol>
+        <symbol id="STANDBY">8</symbol>
+        <symbol id="GRID_PRE_CONNECTED">10</symbol>
+        <symbol id="GRID_CONNECTED">11</symbol>
+      </point>
+      <point id="CurrentState" offset="3" access="r" type="enum16" len="1" mandatory="true">
+        <symbol id="OFF">1</symbol>
+        <symbol id="SLEEPING">2</symbol>
+        <symbol id="STARTING">3</symbol>
+        <symbol id="MPPT">4</symbol>
+        <symbol id="THROTTLED">5</symbol>
+        <symbol id="SHUTTING_DOWN">6</symbol>
+        <symbol id="FAULT">7</symbol>
+        <symbol id="STANDBY">8</symbol>
+        <symbol id="PRECHARGE">9</symbol>
+        <symbol id="GRID_PRE_CONNECTED">10</symbol>
+        <symbol id="GRID_CONNECTED">11</symbol>
+        <symbol id="NO_ERROR_PENDING">12</symbol>
+      </point>
+      <point id="ControlMode" offset="4" access="rw" type="enum16" len="1" mandatory="true">
+        <symbol id="SUNSPEC_CTRL_MODE_NONE">0</symbol>
+        <symbol id="SUNSPEC_CTRL_MODE_QFIX">1</symbol>
+      </point>
+      <point id="Reserved" offset="43" access="r" type="pad" len="1" />
+      <point id="Watchdog" offset="6" access="rw" type="uint16" len="1" mandatory="true" units="Secs" />
+      <point id="WSetPct" offset="7" access="rw" type="int16" len="1" mandatory="true" sf="WSetPct_SF" units="% WMax" />
+      <point id="VarWmaxSetPct" offset="8" access="rw" type="int16" len="1" mandatory="true" sf="VarSetPct_SF" units="% SMax" />
+      <point id="StVnd" offset="14" access="r" type="enum16" len="1" />
+      <point id="StPu" offset="15" access="r" type="enum16" len="1" mandatory="true" />
+      <point id="StPcu" offset="16" access="r" type="enum16" len="1">
+        <symbol id="WAIT_FOR_STARTUP">1</symbol>
+        <symbol id="STANDBY">2</symbol>
+        <symbol id="SWITCH_REL_MINUS">3</symbol>
+        <symbol id="SWITCH_REL_PRECHARGE">4</symbol>
+        <symbol id="SWITCH_REL_PLUS">5</symbol>
+        <symbol id="RUNNING">6</symbol>
+        <symbol id="COOLDOWN">7</symbol>
+        <symbol id="ERROR">8</symbol>
+        <symbol id="CLEAR_ERROR">9</symbol>
+      </point>
+      <point id="ErrPcu" offset="17" access="r" type="enum16" len="1">
+        <symbol id="NO_EVENT">0</symbol>
+        <symbol id="OVER_TEMP">1</symbol>
+        <symbol id="OVER_VOLT">2</symbol>
+        <symbol id="UNDER_VOLT">3</symbol>
+        <symbol id="BATT_POL_INCORRECT">4</symbol>
+        <symbol id="COUNTER_TOO_HIGH">5</symbol>
+        <symbol id="DURING_PRECHARGE">6</symbol>
+        <symbol id="BATT_VOLT_OUT_OF_RANGE">7</symbol>
+        <symbol id="I2C_COMM">8</symbol>
+        <symbol id="CAN_COMM">9</symbol>
+        <symbol id="SWITCH_OFF_AC_DSP">10</symbol>
+      </point>
+      <point id="WparamRmpTms" offset="18" access="rw" type="uint16" len="1" mandatory="true" sf="RmpTms_SF" units="Secs" />
+      <point id="WparamRmpDecTmm" offset="19" access="rw" type="uint16" len="1" mandatory="true" sf="RmpIncDec_SF" units="% ref_value/min" />
+      <point id="WparamRmpIncTmm" offset="20" access="rw" type="uint16" len="1" mandatory="true" sf="RmpIncDec_SF" units="% ref_value/min" />
+      <point id="Wparam_Ena" offset="23" access="rw" type="enum16" len="1" mandatory="true">
+        <symbol id="DISABLED">0</symbol>
+        <symbol id="ENABLED">1</symbol>
+      </point>
+      <point id="VarParamRmpTms" offset="24" access="rw" type="uint16" len="1" mandatory="true" sf="RmpTms_SF" units="Secs" />
+      <point id="VarParamRmpDecTmm" offset="25" access="rw" type="uint16" len="1" mandatory="true" sf="RmpIncDec_SF" units="% ref_value/min" />
+      <point id="VarParamRmpIncTmm" offset="26" access="rw" type="uint16" len="1" mandatory="true" sf="RmpIncDec_SF" units="% ref_value/min" />
+      <point id="VarParam_Ena" offset="29" access="rw" type="enum16" len="1" mandatory="true">
+        <symbol id="DISABLED">0</symbol>
+        <symbol id="ENABLED">1</symbol>
+      </point>
+      <point id="PhVphA" offset="30" access="r" type="uint16" len="1" mandatory="true" sf="V_SF" units="V" />
+      <point id="PhVphB" offset="31" access="r" type="uint16" len="1" mandatory="true" sf="V_SF" units="V" />
+      <point id="PhVphC" offset="32" access="r" type="uint16" len="1" mandatory="true" sf="V_SF" units="V" />
+      <point id="W" offset="33" access="r" type="int16" len="1" mandatory="true" sf="W_SF" units="W" />
+      <point id="VAr" offset="34" access="r" type="int16" len="1" mandatory="true" sf="VAr_SF" units="var" />
+      <point id="Hz" offset="35" access="r" type="uint16" len="1" mandatory="true" sf="Hz_SF" units="Hz" />
+      <point id="WSetPct_SF" offset="44" access="r" type="sunssf" len="1" mandatory="true" />
+      <point id="VarSetPct_SF" offset="45" access="r" type="sunssf" len="1" mandatory="true" />
+      <point id="RmpTms_SF" offset="46" access="r" type="sunssf" len="1" mandatory="true" />
+      <point id="RmpIncDec_SF" offset="47" access="r" type="sunssf" len="1" mandatory="true" />
+      <point id="V_SF" offset="48" access="r" type="sunssf" len="1" mandatory="true" />
+      <point id="W_SF" offset="49" access="r" type="sunssf" len="1" mandatory="true" />
+      <point id="VAr_SF" offset="50" access="r" type="sunssf" len="1" mandatory="true" />
+      <point id="Hz_SF" offset="51" access="r" type="sunssf" len="1" mandatory="true" />
+    </block>
+  </model>
+  <strings id="64201" locale="en">
+    <model>
+      <label>Bidirectionalinvertercontrol</label>
+      <description />
+    </model>
+    <point id="Version">
+      <label>Version</label>
+      <description>Major Version</description>
+      <notes />
+    </point>
+    <point id="VerMinor">
+      <label>Minor Version</label>
+      <description>Minor Version</description>
+      <notes />
+    </point>
+    <point id="RequestedState">
+      <label>RequestedState</label>
+      <description>Enumerated valued.  State control</description>
+      <notes />
+      <symbol id="OFF">
+        <label />
+        <description>Shutdown system and discharge the DC-Link / Clear non pending error</description>
+        <notes />
+      </symbol>
+      <symbol id="STANDBY">
+        <label />
+        <description>Charge DC-Link / Disconnect from grid</description>
+        <notes />
+      </symbol>
+      <symbol id="GRID_PRE_CONNECTED">
+        <label />
+        <description>Prepare for grid connection</description>
+        <notes />
+      </symbol>
+      <symbol id="GRID_CONNECTED">
+        <label />
+        <description>Connect to grid</description>
+        <notes />
+      </symbol>
+    </point>
+    <point id="CurrentState">
+      <label>CurrentState</label>
+      <description>Enumerated value.  Operating state</description>
+      <notes />
+      <symbol id="OFF">
+        <label>Off</label>
+        <description>Device is not operating</description>
+        <notes />
+      </symbol>
+      <symbol id="SLEEPING">
+        <label>Sleeping</label>
+        <description>Device is sleeping / auto-shudown</description>
+        <notes />
+      </symbol>
+      <symbol id="STARTING">
+        <label>Starting</label>
+        <description>Device is staring up</description>
+        <notes />
+      </symbol>
+      <symbol id="MPPT">
+        <label>MPPT</label>
+        <description>Device is auto tracking maximum power point</description>
+        <notes />
+      </symbol>
+      <symbol id="THROTTLED">
+        <label>Throttled</label>
+        <description>Device is operating at reduced power output</description>
+        <notes />
+      </symbol>
+      <symbol id="SHUTTING_DOWN">
+        <label>Shutting down</label>
+        <description>Device is shutting down</description>
+        <notes />
+      </symbol>
+      <symbol id="FAULT">
+        <label>Fault</label>
+        <description>One or more faults exist</description>
+        <notes />
+      </symbol>
+      <symbol id="STANDBY">
+        <label>Standby</label>
+        <description>Device is in standby mode</description>
+        <notes />
+      </symbol>
+      <symbol id="PRECHARGE">
+        <label>Precharge</label>
+        <description>DC-Link is precharged</description>
+        <notes />
+      </symbol>
+      <symbol id="GRID_PRE_CONNECTED">
+        <label>Grid Pre Connected</label>
+        <description>Device is prepared for grid connection</description>
+        <notes />
+      </symbol>
+      <symbol id="GRID_CONNECTED">
+        <label>Grid Connected</label>
+        <description>Device is connected to the grid</description>
+        <notes />
+      </symbol>
+      <symbol id="NO_ERROR_PENDING">
+        <label>No Error pending</label>
+        <description>Device is waiting until the user clears the error which is not peding any more</description>
+        <notes />
+      </symbol>
+    </point>
+    <point id="ControlMode">
+      <label>ControlMode</label>
+      <description>Power Control mode (zun&#228;chst 0=Q RPC_Local / 1 RPC_Remote Qfix 64201)</description>
+      <notes />
+      <symbol id="SUNSPEC_CTRL_MODE_NONE">
+        <label />
+        <description />
+        <notes />
+      </symbol>
+      <symbol id="SUNSPEC_CTRL_MODE_QFIX">
+        <label>Qfix</label>
+        <description />
+        <notes />
+      </symbol>
+    </point>
+    <point id="Reserved">
+      <label>Reserved</label>
+      <description />
+      <notes />
+    </point>
+    <point id="Watchdog">
+      <label>Watchdog</label>
+      <description>Enable Watchdog countdown. Register must be filled with the desired watchdog timeout in seconds. 0 means watchdog is disabled. It is recommended to re-write the register at least 10 seconds before the timeout is activated.</description>
+      <notes>0 to 600</notes>
+    </point>
+    <point id="WSetPct">
+      <label>WSetPct</label>
+      <description>Set power output to specified level.</description>
+      <notes>unscaled: -100 to 100</notes>
+    </point>
+    <point id="VarWmaxSetPct">
+      <label>VarWmaxSetPct</label>
+      <description>Reactive power in percent of WMax. </description>
+      <notes>unscaled: -100 to 100</notes>
+    </point>
+    <point id="StVnd">
+      <label>StVnd</label>
+      <description>PrologState</description>
+      <notes />
+    </point>
+    <point id="StPu">
+      <label>StPu</label>
+      <description>Power Unit State (DSP)</description>
+      <notes />
+    </point>
+    <point id="StPcu">
+      <label>StPcu</label>
+      <description>pcu state</description>
+      <notes />
+      <symbol id="WAIT_FOR_STARTUP">
+        <label />
+        <description />
+        <notes />
+      </symbol>
+      <symbol id="STANDBY">
+        <label />
+        <description />
+        <notes />
+      </symbol>
+      <symbol id="SWITCH_REL_MINUS">
+        <label />
+        <description />
+        <notes />
+      </symbol>
+      <symbol id="SWITCH_REL_PRECHARGE">
+        <label />
+        <description />
+        <notes />
+      </symbol>
+      <symbol id="SWITCH_REL_PLUS">
+        <label />
+        <description />
+        <notes />
+      </symbol>
+      <symbol id="RUNNING">
+        <label />
+        <description />
+        <notes />
+      </symbol>
+      <symbol id="COOLDOWN">
+        <label />
+        <description />
+        <notes />
+      </symbol>
+      <symbol id="ERROR">
+        <label />
+        <description />
+        <notes />
+      </symbol>
+      <symbol id="CLEAR_ERROR">
+        <label />
+        <description />
+        <notes />
+      </symbol>
+    </point>
+    <point id="ErrPcu">
+      <label>ErrPcu</label>
+      <description>pcu error</description>
+      <notes />
+      <symbol id="NO_EVENT">
+        <label />
+        <description />
+        <notes />
+      </symbol>
+      <symbol id="OVER_TEMP">
+        <label />
+        <description />
+        <notes />
+      </symbol>
+      <symbol id="OVER_VOLT">
+        <label />
+        <description />
+        <notes />
+      </symbol>
+      <symbol id="UNDER_VOLT">
+        <label />
+        <description />
+        <notes />
+      </symbol>
+      <symbol id="BATT_POL_INCORRECT">
+        <label />
+        <description />
+        <notes />
+      </symbol>
+      <symbol id="COUNTER_TOO_HIGH">
+        <label />
+        <description />
+        <notes />
+      </symbol>
+      <symbol id="DURING_PRECHARGE">
+        <label />
+        <description />
+        <notes />
+      </symbol>
+      <symbol id="BATT_VOLT_OUT_OF_RANGE">
+        <label />
+        <description />
+        <notes />
+      </symbol>
+      <symbol id="I2C_COMM">
+        <label />
+        <description />
+        <notes />
+      </symbol>
+      <symbol id="CAN_COMM">
+        <label />
+        <description />
+        <notes />
+      </symbol>
+      <symbol id="SWITCH_OFF_AC_DSP">
+        <label />
+        <description />
+        <notes />
+      </symbol>
+    </point>
+    <point id="WparamRmpTms">
+      <label>WparamRmpTms</label>
+      <description>The time of the PT1 in seconds (time to accomplish a change of 99,3% which means 5tau).</description>
+      <notes />
+    </point>
+    <point id="WparamRmpDecTmm">
+      <label>WparamRmpDecTmm</label>
+      <description>The maximum rate at which the W value may be reduced in response to changes in the voltage value. %Wmax</description>
+      <notes />
+    </point>
+    <point id="WparamRmpIncTmm">
+      <label>WparamRmpIncTmm</label>
+      <description>The maximum rate at which the W value may be increased in response to changes in the voltage value.%Wmax</description>
+      <notes />
+    </point>
+    <point id="Wparam_Ena">
+      <label>Wparam_Ena</label>
+      <description>WSet_Ena control</description>
+      <notes>0 or 1</notes>
+      <symbol id="DISABLED">
+        <label />
+        <description />
+        <notes />
+      </symbol>
+      <symbol id="ENABLED">
+        <label />
+        <description />
+        <notes />
+      </symbol>
+    </point>
+    <point id="VarParamRmpTms">
+      <label>VarParamRmpTms</label>
+      <description>The time of the PT1 in seconds (time to accomplish a change of 99,3% which means 5tau).</description>
+      <notes>PT1</notes>
+    </point>
+    <point id="VarParamRmpDecTmm">
+      <label>VarParamRmpDecTmm</label>
+      <description>The maximum rate at which the VAR value may be reduced in response to changes in the voltage value. %refVal is %WMax %VArMax or %VArAval depending on value of DeptRef.</description>
+      <notes>RampeDec</notes>
+    </point>
+    <point id="VarParamRmpIncTmm">
+      <label>VarParamRmpIncTmm</label>
+      <description>The maximum rate at which the VAR value may be increased in response to changes in the voltage value. %refVal is %WMax %VArMax or %VArAval depending on value of DeptRef.</description>
+      <notes>RampeInc</notes>
+    </point>
+    <point id="VarParam_Ena">
+      <label>VarParam_Ena</label>
+      <description>Enumerated valued.  Percent limit VAr enable/disable control.</description>
+      <notes />
+      <symbol id="DISABLED">
+        <label />
+        <description />
+        <notes />
+      </symbol>
+      <symbol id="ENABLED">
+        <label />
+        <description />
+        <notes />
+      </symbol>
+    </point>
+    <point id="PhVphA">
+      <label>Phase Voltage AN</label>
+      <description>Phase Voltage AN</description>
+      <notes />
+    </point>
+    <point id="PhVphB">
+      <label>Phase Voltage BN</label>
+      <description>Phase Voltage BN</description>
+      <notes />
+    </point>
+    <point id="PhVphC">
+      <label>Phase Voltage CN</label>
+      <description>Phase Voltage CN</description>
+      <notes />
+    </point>
+    <point id="W">
+      <label>Watts</label>
+      <description>AC Power</description>
+      <notes />
+    </point>
+    <point id="VAr">
+      <label>VAr</label>
+      <description>AC Reactive Power</description>
+      <notes />
+    </point>
+    <point id="Hz">
+      <label>Hz</label>
+      <description>Line Frequency</description>
+      <notes />
+    </point>
+    <point id="WSetPct_SF">
+      <label>WSetPct_SF</label>
+      <description>Scale factor for active power percent.</description>
+      <notes />
+    </point>
+    <point id="VarSetPct_SF">
+      <label>VarSetPct_SF</label>
+      <description>Scale factor for reactive power percent.</description>
+      <notes />
+    </point>
+    <point id="RmpTms_SF">
+      <label>RmpTms_SF</label>
+      <description>Scale factor for PT1</description>
+      <notes>-3: Range: 1ms to 1min</notes>
+    </point>
+    <point id="RmpIncDec_SF">
+      <label>RmpIncDec_SF</label>
+      <description>Scale factor for increment and decrement ramps.</description>
+      <notes>2: Range: 1ms to 1min</notes>
+    </point>
+    <point id="V_SF">
+      <label>V_SF</label>
+      <description />
+      <notes />
+    </point>
+    <point id="W_SF">
+      <label>W_SF</label>
+      <description />
+      <notes />
+    </point>
+    <point id="VAr_SF">
+      <label>VAr_SF</label>
+      <description />
+      <notes />
+    </point>
+    <point id="Hz_SF">
+      <label>Hz_SF</label>
+      <description />
+      <notes />
+    </point>
+  </strings>
+</sunSpecModels>

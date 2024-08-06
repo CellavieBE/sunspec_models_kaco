@@ -1,0 +1,36 @@
+<sunSpecModels v="1">
+  <model id="64205" len="4" name="Input/Outputmodule">
+    <block len="4" type="fixed">
+      <point id="VerMajor" offset="0" access="r" type="uint16" len="1" mandatory="true" />
+      <point id="VerMinor" offset="1" access="r" type="uint16" len="1" mandatory="true" />
+      <point id="con800" offset="0" access="rw" type="uint16" len="1" mandatory="true" />
+      <point id="con801" offset="1" access="rw" type="uint16" len="1" mandatory="true" />
+    </block>
+  </model>
+  <strings id="64205" locale="en">
+    <model>
+      <label>Input/Outputmodule</label>
+      <description />
+    </model>
+    <point id="VerMajor">
+      <label>Version Information of Model</label>
+      <description>Major Version number</description>
+      <notes />
+    </point>
+    <point id="VerMinor">
+      <label />
+      <description>Minor Version number</description>
+      <notes />
+    </point>
+    <point id="con800">
+      <label>CON800</label>
+      <description>Status of pins of CON800 module</description>
+      <notes />
+    </point>
+    <point id="con801">
+      <label>CON801</label>
+      <description>Status of pins of CON801 module</description>
+      <notes>Digital Output Module not yet available</notes>
+    </point>
+  </strings>
+</sunSpecModels>

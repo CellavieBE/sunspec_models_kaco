@@ -1,0 +1,118 @@
+<sunSpecModels v="1">
+  <model id="64310" len="27" name="Featuremodel">
+    <block len="13" type="fixed">
+      <point id="VerMajor" offset="0" access="r" type="uint16" len="1" mandatory="true" />
+      <point id="VerMinor" offset="1" access="r" type="uint16" len="1" mandatory="true" />
+      <point id="N" offset="2" access="r" type="uint16" len="1" mandatory="true" />
+      <point id="Reserved" offset="3" access="r" type="string" len="10" />
+    </block>
+    <block len="14" type="repeating">
+      <point id="FeatID" offset="0" access="r" type="enum16" len="1">
+        <symbol id="REMOTE_ACCESS">1</symbol>
+        <symbol id="REMOTE_FW_UPDATE">2</symbol>
+        <symbol id="CONFIG_UPLOAD">3</symbol>
+        <symbol id="IV_CURVE">4</symbol>
+        <symbol id="PASSWD_RESET">5</symbol>
+        <symbol id="ACT_KEY">6</symbol>
+        <symbol id="SYS_SHUTDOWN">7</symbol>
+      </point>
+      <point id="FeatVerMajor" offset="1" access="r" type="uint16" len="1" />
+      <point id="FeatVerMinor" offset="2" access="r" type="uint16" len="1" />
+      <point id="FeatEna" offset="3" access="r" type="bitfield16" len="1">
+        <symbol id="FEATURE_ENABLED">0</symbol>
+      </point>
+      <point id="Reserved" offset="4" access="r" type="string" len="10" />
+    </block>
+  </model>
+  <strings id="64310" locale="en">
+    <model>
+      <label>Featuremodel</label>
+      <description />
+    </model>
+    <point id="VerMajor">
+      <label>Version Major</label>
+      <description>Version Information of Model</description>
+      <notes />
+    </point>
+    <point id="VerMinor">
+      <label>Version Minor</label>
+      <description />
+      <notes />
+    </point>
+    <point id="N">
+      <label>Number of Features</label>
+      <description>Numer of features to follow</description>
+      <notes />
+    </point>
+    <point id="Reserved">
+      <label>(For future use)</label>
+      <description>Reserved (for future use)</description>
+      <notes />
+    </point>
+    <point id="FeatID">
+      <label>Feature ID</label>
+      <description>Feature ID</description>
+      <notes />
+      <symbol id="REMOTE_ACCESS">
+        <label>Remote access</label>
+        <description />
+        <notes />
+      </symbol>
+      <symbol id="REMOTE_FW_UPDATE">
+        <label>Remote firmware update</label>
+        <description />
+        <notes />
+      </symbol>
+      <symbol id="CONFIG_UPLOAD">
+        <label>Config upload</label>
+        <description />
+        <notes />
+      </symbol>
+      <symbol id="IV_CURVE">
+        <label>I/V curve</label>
+        <description />
+        <notes />
+      </symbol>
+      <symbol id="PASSWD_RESET">
+        <label>Password reset</label>
+        <description />
+        <notes />
+      </symbol>
+      <symbol id="ACT_KEY">
+        <label>Activation key</label>
+        <description />
+        <notes />
+      </symbol>
+      <symbol id="SYS_SHUTDOWN">
+        <label>System shutdown</label>
+        <description />
+        <notes />
+      </symbol>
+    </point>
+    <point id="FeatVerMajor">
+      <label>Feature Version Major</label>
+      <description>Feature version major</description>
+      <notes />
+    </point>
+    <point id="FeatVerMinor">
+      <label>Feature Version Minor</label>
+      <description>Feature version minor</description>
+      <notes />
+    </point>
+    <point id="FeatEna">
+      <label>Feature enabled flag</label>
+      <description>Feature enabled flag</description>
+      <notes />
+      <symbol id="FEATURE_ENABLED">
+        <label>Feature enabled </label>
+        <description />
+        <notes />
+      </symbol>
+    </point>
+    <point id="Reserved">
+      <label>(For future use)</label>
+      <description>Reserved (for future use)</description>
+      <notes />
+    </point>
+  </strings>
+</sunSpecModels>
