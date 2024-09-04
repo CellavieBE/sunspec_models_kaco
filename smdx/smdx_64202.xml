@@ -8,7 +8,7 @@
       <point id="V_SF" offset="4" access="r" type="sunssf" len="1" mandatory="true" />
       <point id="A_SF" offset="5" access="r" type="sunssf" len="1" mandatory="true" />
     </block>
-    <block len="8" type="repeating">
+    <block len="8" type="repeating" name="batterylimits">
       <point id="DisMinV" offset="0" access="rw" type="uint16" len="1" mandatory="true" sf="V_SF" units="V" />
       <point id="DisMaxA" offset="1" access="rw" type="uint16" len="1" mandatory="true" sf="A_SF" units="A" />
       <point id="DisCutoffA" offset="2" access="rw" type="uint16" len="1" sf="A_SF" units="A" />
